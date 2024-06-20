@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>DFA Simulator</title>
+    <link rel="stylesheet" href="./style.css">
     <style>
         #canvasContainer {
             width: 1200px;
@@ -9,41 +11,48 @@
             border: 1px solid black;
             overflow: auto;
         }
+
         canvas {
             width: 1500px;
             height: 900px;
         }
     </style>
 </head>
+
 <body>
-    <h1>DFA Simulator</h1>
-    <div>
-        <label for="symbols">Enter symbols: </label>
-        <input type="text" id="symbols"><br><br>
+    <header id="header">
+        <h1>DFA Simulator</h1>
+    </header>
+
+    <div class="container">
+        <form>
+            <div id="group">
+                <input type="text" id="symbols" placeholder="Enter Symbol">
+            </div>
+            <div id="group">
+                <input type="text" id="pattern" placeholder="Enter pattern to find:">
+            </div>
+            <div id="group">
+                <input type="text" id="string" placeholder="Enter string to process:">
+            </div>
+        </form><br><br>
+        <div id="group">
+            <label for="option">Choose an option: </label>
+            <select id="option">
+                <option value="1">Starting with</option>
+                <option value="2">Ending with</option>
+                <option value="3">Substring with</option>
+            </select>
+            <button onclick="main()">Run</butto>
+        </div>
     </div>
-    <div>
-        <label for="pattern">Enter pattern to find: </label>
-        <input type="text" id="pattern"><br><br>
-    </div>
-    <div>
-        <label for="string">Enter string to process: </label>
-        <input type="text" id="string"><br><br>
-    </div>
-    <div>
-        <label for="option">Choose an option: </label>
-        <select id="option">
-            <option value="1">Starting with</option>
-            <option value="2">Ending with</option>
-            <option value="3">Substring with</option>
-        </select>
-    </div>
-    <button onclick="main()">Run</button><br><br>
-    <div id="transitionResult"></div>
-    <div id="tableResult"></div>
-    <div id="result"></div>
-    <!-- <div id="canvasContainer"> -->
+        <div id="transitionResult"></div>
+        <div id="tableResult"></div>
+        <div id="result"></div>
+        <!-- <div id="canvasContainer"> -->
         <!-- <canvas id="dfaCanvas"></canvas> -->
-    <!-- </div> -->
-    <script src="dfa.js"></script>
+        <!-- </div> -->
+        <script src="dfa.js"></script>
 </body>
+
 </html>

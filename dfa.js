@@ -181,63 +181,6 @@ function dfaStart(s, p, sym) {
     return dfa;
 }
 
-// Example usage:
-// let s = 3;
-// let p = "aba";
-// let sym = ["a", "b"];
-// console.log(dfaStart(s, p, sym));
-
-//Draw Graphics Automata
-// function drawDFA(dfa) {
-//     let canvas = document.getElementById("dfaCanvas");
-//     let ctx = canvas.getContext("2d");
-
-//     let radius = 20;
-//     let colors = ["red", "green", "purple", "blue", "orange"];
-//     let space = 1000;
-
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-//     let positions = [];
-//     for (let i = 0; i < dfa[Object.keys(dfa)[0]].length; i++) {
-//         let x = space * (i + 1);
-//         let y = canvas.height / 2;
-//         positions.push({ x, y });
-
-//         ctx.beginPath();
-//         ctx.arc(x, y, radius, 0, 2 * Math.PI);
-//         ctx.fillStyle = colors[i % colors.length];
-//         ctx.fill();
-//         ctx.stroke();
-
-//         ctx.fillStyle = "black";
-//         ctx.textAlign = "center";
-//         ctx.textBaseline = "middle";
-//         ctx.fillText("Q" + i, x, y);
-//     }
-
-//     for (let i = 0; i < dfa[Object.keys(dfa)[0]].length; i++) {
-//         for (let j = 0; j < Object.keys(dfa).length; j++) {
-//             let symbol = Object.keys(dfa)[j];
-//             let transitions = dfa[symbol];
-
-//             if (transitions[i][1] !== "D") {
-//                 let from = positions[i];
-//                 let to = positions[transitions[i][1]];
-
-//                 ctx.beginPath();
-//                 ctx.moveTo(from.x, from.y);
-//                 ctx.lineTo(to.x, to.y);
-//                 ctx.strokeStyle = colors[j % colors.length];
-//                 ctx.stroke();
-
-//                 ctx.fillStyle = "black";
-//                 ctx.fillText(symbol, (from.x + to.x) / 2, (from.y + to.y) / 2);
-//             }
-//         }
-//     }
-// }
-
 function main() {
     let symbol = document.getElementById("symbols").value;
     let pattern = document.getElementById("pattern").value;
