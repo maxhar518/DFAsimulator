@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DFA Simulator</title>
+    <style>
+        #canvasContainer {
+            width: 1200px;
+            height: 600px;
+            border: 1px solid black;
+            overflow: auto;
+        }
+        canvas {
+            width: 1500px;
+            height: 900px;
+        }
+    </style>
+</head>
+<body>
+    <h1>DFA Simulator</h1>
+    <div>
+        <label for="symbols">Enter symbols: </label>
+        <input type="text" id="symbols"><br><br>
+    </div>
+    <div>
+        <label for="pattern">Enter pattern to find: </label>
+        <input type="text" id="pattern"><br><br>
+    </div>
+    <div>
+        <label for="string">Enter string to process: </label>
+        <input type="text" id="string"><br><br>
+    </div>
+    <div>
+        <label for="option">Choose an option: </label>
+        <select id="option">
+            <option value="1">Starting with</option>
+            <option value="2">Ending with</option>
+            <option value="3">Substring with</option>
+        </select>
+    </div>
+    <button onclick="main()">Run</button><br><br>
+    <div id="transitionResult"></div>
+    <div id="tableResult"></div>
+    <div id="result"></div>
+    <!-- <div id="canvasContainer"> -->
+        <!-- <canvas id="dfaCanvas"></canvas> -->
+    <!-- </div> -->
+    <script src="dfa.js"></script>
+</body>
+</html>
